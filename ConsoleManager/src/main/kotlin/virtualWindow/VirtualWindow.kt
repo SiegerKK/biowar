@@ -123,7 +123,7 @@ open class VirtualWindow(
         print("\u001b[38;5;${foregroundColor.asciiCode}m")
     }
     private fun printConsole() {
-        TODO("Not yet implemented")
+        // TODO("Not yet implemented")
     }
 
     fun addView(view: View) {

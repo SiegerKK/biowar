@@ -4,6 +4,7 @@ import util.Color
 import util.Console
 import util.VectorLong
 import virtualWindow.Pixel
+import java.lang.Long.min
 
 class TextView(
         id: String, position: VectorLong, size: VectorLong,
@@ -108,7 +109,18 @@ class TextView(
         return pixels
     }
 
-    fun wrapText(text: String, size: VectorLong): String {
-        
+    fun wrapText(text: String, size: VectorLong): ArrayList<String> {
+        val splitText = text.split("\n")
+
+        val result = ArrayList<String>()
+        val cursorPosition = VectorLong(0, 0)
+        for(index in text.indices){
+            if(text[index] == '\t')
+                for (j in cursorPosition.x until min(size.x, cursorPosition.x + 4).toInt())
+                    result[cursorPosition.y.toInt()] += " "
+
+        }
+
+        return result
     }
 }
