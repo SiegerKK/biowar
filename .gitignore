@@ -1,0 +1,9 @@
+*~
+.*
+*.log
+*.err
+
+out/
+build/
+ConsoleManager/build/
+ConsoleManager/out/
